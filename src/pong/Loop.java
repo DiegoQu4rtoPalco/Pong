@@ -1,6 +1,5 @@
 package pong;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
@@ -10,9 +9,14 @@ import javax.swing.JPanel;
 public class Loop extends JPanel implements Runnable {
 
 	private static final long serialVersionUID = 1L;
+	
+	private Jogador jogador;
 
 
 	public Loop() {
+		
+		jogador = new Jogador();
+		
 		Thread thread = new Thread(this);
 		thread.start();
 	}
@@ -33,8 +37,7 @@ public class Loop extends JPanel implements Runnable {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.setColor(Color.BLACK);
-		g.fillRect(0, 0, 100, 100);
+		jogador.pintar(g);
 	}
 
 	private void sleep() {
