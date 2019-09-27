@@ -2,3 +2,5 @@ Projeto criado
 
 1º Criando classe Main, classe principal,visibilidade da janela no tamanho desejado
    e configurado.
+   
+2º Criando classe Loop, classe responsável de rodar o jogo.   
