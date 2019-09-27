@@ -1,22 +1,27 @@
 package pong;
 
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 
 
 
-public class Loop extends JPanel implements Runnable {
+public class Loop extends JPanel implements Runnable, KeyListener {
 
 	private static final long serialVersionUID = 1L;
 	
+	private int largura, altura;
 	private Jogador jogador;
+	private int direcao;
 
 
 	public Loop() {
-		
+		direcao = 0;
 		jogador = new Jogador();
 		
+		largura = 800; altura = 400;
 		Thread thread = new Thread(this);
 		thread.start();
 	}
@@ -32,15 +37,19 @@ public class Loop extends JPanel implements Runnable {
 	}
 	
 	private void update() {
-		// TODO Auto-generated method stub
+		if(jogador != null) {
+			jogador.movimentar(direcao);
+		}
 		
 	}
 
 	public void paintComponent(Graphics g) {
-		for(int i = 0; i < 800/20; i++) {
-			g.drawLine(i * 20, 0,  i * 20 ,400);
-			for(int j = 0; j < 400/20; j++) {
-				g.drawLine(0, i * 20, 800, i * 20 );
+		g.clearRect(0, 0, largura, altura);
+		
+		for(int i = 0; i < largura/20; i++) {
+			g.drawLine(i * 20, 0,  i * 20 , altura);
+			for(int j = 0; j < altura/20; j++) {
+				g.drawLine(0, i * 20, largura, i * 20 );
 			}
 		}
 		jogador.pintar(g);
@@ -53,6 +62,30 @@ public class Loop extends JPanel implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			direcao = 1;
+		}
+		else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			direcao = -1;
+		}
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode() == KeyEvent.VK_LEFT) {
+			direcao = 0;
+		}
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

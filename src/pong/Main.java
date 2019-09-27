@@ -19,7 +19,7 @@ public class Main {
 		janela.add(loop);
 		janela.setVisible(true);
 		
-		
+		janela.addKeyListener(loop);
 	}
 
 }
