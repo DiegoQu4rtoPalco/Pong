@@ -37,6 +37,12 @@ public class Loop extends JPanel implements Runnable {
 	}
 
 	public void paintComponent(Graphics g) {
+		for(int i = 0; i < 800/20; i++) {
+			g.drawLine(i * 20, 0,  i * 20 ,400);
+			for(int j = 0; j < 400/20; j++) {
+				g.drawLine(0, i * 20, 800, i * 20 );
+			}
+		}
 		jogador.pintar(g);
 	}
 
