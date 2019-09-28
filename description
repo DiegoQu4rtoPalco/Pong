@@ -10,3 +10,5 @@ Projeto criado
 4º Foi dado a janela desenho de grades no commit anterior, para poder dar um noção de 
 espaço, agora vamos movimentar o jogador para os lados, implementando a classe para KeyListener
 e adicionando a classe pong a janela KeyListener na classe Main. 
+
+5º Criando a classe bola, pintando e colocando ela em movimento.

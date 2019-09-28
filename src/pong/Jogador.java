@@ -8,9 +8,9 @@ public class Jogador {
 	private int posX, posY, tamX, tamY, velo;
 
 	public Jogador() {
-		posX = 400;
+		posX = 370;
 		posY = 350;
-		tamX = 20;
+		tamX = 80;
 		tamY = 20;
 		velo = 3;
 	}

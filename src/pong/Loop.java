@@ -14,10 +14,12 @@ public class Loop extends JPanel implements Runnable, KeyListener {
 	
 	private int largura, altura;
 	private Jogador jogador;
+	private Bola bola;
 	private int direcao;
 
 
 	public Loop() {
+		bola = new Bola();
 		direcao = 0;
 		jogador = new Jogador();
 		
@@ -41,6 +43,8 @@ public class Loop extends JPanel implements Runnable, KeyListener {
 			jogador.movimentar(direcao);
 		}
 		
+		bola.movimentar();
+		
 	}
 
 	public void paintComponent(Graphics g) {
@@ -53,6 +57,7 @@ public class Loop extends JPanel implements Runnable, KeyListener {
 			}
 		}
 		jogador.pintar(g);
+		bola.pintar(g);
 	}
 
 	private void sleep() {
