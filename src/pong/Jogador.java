@@ -9,10 +9,10 @@ public class Jogador {
 
 	public Jogador() {
 		posX = 370;
-		posY = 350;
+		posY = 300;
 		tamX = 80;
 		tamY = 20;
-		velo = 3;
+		velo = 5;
 	}
 
 	public void pintar(Graphics g) {
@@ -27,6 +27,31 @@ public class Jogador {
 		else if(valor == -1) {
 			posX-=velo;
 		}
+		
+		if( posX +  tamX >= 800) {
+			posX = 800 - tamX;
+		}
+		if(posX <= 0) {
+			posX = 0;
+		}
 	}
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public int getTamX() {
+		return tamX;
+	}
+
+	public int getTamY() {
+		return tamY;
+	}
+	
+	
 
 }

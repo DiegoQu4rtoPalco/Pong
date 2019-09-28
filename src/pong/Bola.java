@@ -6,8 +6,11 @@ import java.awt.Graphics;
 public class Bola {
 	
 	private int posX, posY, tamX, tamY, direX, direY, velo;
+	private Jogador jogador;
 	
 	public Bola() {
+		
+		jogador = new Jogador();
 		posX = 400;
 		posY = 200;
 		tamX = 20;
@@ -30,6 +33,12 @@ public class Bola {
 		posY += direY * velo;
 		if(posY >= 400 - 50 || posY <= 0) {
 			direY *= -1;
+		}
+	}
+	
+	public void colisao() {
+		if(posX <= jogador.getPosX()) {
+			direX *=-1;
 		}
 	}
 

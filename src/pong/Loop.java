@@ -44,6 +44,7 @@ public class Loop extends JPanel implements Runnable, KeyListener {
 		}
 		
 		bola.movimentar();
+		bola.colisao();
 		
 	}
 

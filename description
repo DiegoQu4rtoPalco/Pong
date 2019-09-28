@@ -12,3 +12,5 @@ espaço, agora vamos movimentar o jogador para os lados, implementando a classe 
 e adicionando a classe pong a janela KeyListener na classe Main. 
 
 5º Criando a classe bola, pintando e colocando ela em movimento.
+
+6º Colisão de jogador com as paredes
